@@ -1,0 +1,1712 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/peerigon/phridge#readme">phridge (v2.0.0)</a>
+</h1>
+<h4>A bridge between node and phantomjs</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.phridge">module phridge</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phridge.Page">
+            function <span class="apidocSignatureSpan">phridge.</span>Page
+            <span class="apidocSignatureSpan">(phantom, id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phridge.Phantom">
+            function <span class="apidocSignatureSpan">phridge.</span>Phantom
+            <span class="apidocSignatureSpan">(childProcess)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phridge.disposeAll">
+            function <span class="apidocSignatureSpan">phridge.</span>disposeAll
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phridge.forkStdout">
+            function <span class="apidocSignatureSpan">phridge.</span>forkStdout
+            <span class="apidocSignatureSpan">(stdout)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phridge.lift">
+            function <span class="apidocSignatureSpan">phridge.</span>lift
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phridge.serializeFn">
+            function <span class="apidocSignatureSpan">phridge.</span>serializeFn
+            <span class="apidocSignatureSpan">(fn, args)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phridge.spawn">
+            function <span class="apidocSignatureSpan">phridge.</span>spawn
+            <span class="apidocSignatureSpan">(phantomJsConfig)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">phridge.</span>Page.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">phridge.</span>Phantom.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">phridge.</span>config</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.phridge.Page">module phridge.Page</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phridge.Page.Page">
+            function <span class="apidocSignatureSpan">phridge.</span>Page
+            <span class="apidocSignatureSpan">(phantom, id)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.phridge.Page.prototype">module phridge.Page.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phridge.Page.prototype.dispose">
+            function <span class="apidocSignatureSpan">phridge.Page.prototype.</span>dispose
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phridge.Page.prototype.run">
+            function <span class="apidocSignatureSpan">phridge.Page.prototype.</span>run
+            <span class="apidocSignatureSpan">(args, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">phridge.Page.prototype.</span>_id</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">phridge.Page.prototype.</span>phantom</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.phridge.Phantom">module phridge.Phantom</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phridge.Phantom.Phantom">
+            function <span class="apidocSignatureSpan">phridge.</span>Phantom
+            <span class="apidocSignatureSpan">(childProcess)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.phridge.Phantom.prototype">module phridge.Phantom.prototype</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>_isDisposed</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phridge.Phantom.prototype._afterExit">
+            function <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>_afterExit
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phridge.Phantom.prototype._beforeExit">
+            function <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>_beforeExit
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phridge.Phantom.prototype._onUnexpectedError">
+            function <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>_onUnexpectedError
+            <span class="apidocSignatureSpan">(error)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phridge.Phantom.prototype._receive">
+            function <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>_receive
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phridge.Phantom.prototype._resolveDeferred">
+            function <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>_resolveDeferred
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phridge.Phantom.prototype._schedulePing">
+            function <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>_schedulePing
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phridge.Phantom.prototype._send">
+            function <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>_send
+            <span class="apidocSignatureSpan">(message, fnIsSync)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phridge.Phantom.prototype._write">
+            function <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>_write
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phridge.Phantom.prototype.constructor">
+            function <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(childProcess)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phridge.Phantom.prototype.createPage">
+            function <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>createPage
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phridge.Phantom.prototype.dispose">
+            function <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>dispose
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phridge.Phantom.prototype.openPage">
+            function <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>openPage
+            <span class="apidocSignatureSpan">(url)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phridge.Phantom.prototype.run">
+            function <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>run
+            <span class="apidocSignatureSpan">(args, fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>_pending</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>_pendingDeferreds</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>_pingTimeoutId</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>_unexpectedError</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>childProcess</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.phridge.disposeAll">module phridge.disposeAll</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phridge.disposeAll.disposeAll">
+            function <span class="apidocSignatureSpan">phridge.</span>disposeAll
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.phridge.forkStdout">module phridge.forkStdout</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phridge.forkStdout.forkStdout">
+            function <span class="apidocSignatureSpan">phridge.</span>forkStdout
+            <span class="apidocSignatureSpan">(stdout)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.phridge.lift">module phridge.lift</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phridge.lift.lift">
+            function <span class="apidocSignatureSpan">phridge.</span>lift
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.phridge.serializeFn">module phridge.serializeFn</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phridge.serializeFn.serializeFn">
+            function <span class="apidocSignatureSpan">phridge.</span>serializeFn
+            <span class="apidocSignatureSpan">(fn, args)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.phridge.spawn">module phridge.spawn</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.phridge.spawn.spawn">
+            function <span class="apidocSignatureSpan">phridge.</span>spawn
+            <span class="apidocSignatureSpan">(phantomJsConfig)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.phridge" id="apidoc.module.phridge">module phridge</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.phridge.Page" id="apidoc.element.phridge.Page">
+        function <span class="apidocSignatureSpan">phridge.</span>Page
+        <span class="apidocSignatureSpan">(phantom, id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Page(phantom, id) {
+    Page.prototype.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.phridge.Phantom" id="apidoc.element.phridge.Phantom">
+        function <span class="apidocSignatureSpan">phridge.</span>Phantom
+        <span class="apidocSignatureSpan">(childProcess)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Phantom(childProcess) {
+    Phantom.prototype.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.phridge.disposeAll" id="apidoc.element.phridge.disposeAll">
+        function <span class="apidocSignatureSpan">phridge.</span>disposeAll
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function disposeAll() {
+    var copy = instances.slice(0); // copy the array because phantom.dispose() will modify it
+
+    return Promise.all(copy.map(exit));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+which will terminate the process cleanly by calling `phantom.exit(0)` internally. You don't need to dispose all pages manuallly
+ when you call `phantom.dispose()`.
+
+However, calling
+
+```javascript
+phridge.<span class="apidocCodeKeywordSpan">disposeAll</span>().then(function () {
+    console.log("All processes created by phridge.spawn() have been terminated");
+});
+```
+
+will terminate all processes.
+
+**I strongly recommend to call** `phridge.disposeAll()` **when the node process exits as this is the only way to ensure that all
+ child processes terminate as well.** Since `disposeAll()` is async it is not safe to call it on `process.on("exit")`.
+It is better to call it on `SIGINT`, `SIGTERM` and within your regular exit flow.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.phridge.forkStdout" id="apidoc.element.phridge.forkStdout">
+        function <span class="apidocSignatureSpan">phridge.</span>forkStdout
+        <span class="apidocSignatureSpan">(stdout)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function forkStdout(stdout) {
+    var fork;
+    var phridgeEndpoint;
+    var cleanStdoutEndpoint;
+
+    // Expecting a character stream because we're splitting messages by an EOL-character
+    stdout.setEncoding("utf8");
+
+    fork = new ForkStream({
+        classifier: function (chunk, done) {
+            chunk = chunk
+                .slice(0, messageToNode.length);
+            done(null, chunk === messageToNode);
+        }
+    });
+
+    stdout
+        .pipe(new Linerstream())
+        .pipe(fork);
+
+    // Removes the 'message to node: '-prefix from every chunk.
+    phridgeEndpoint = fork.a.pipe(new CropPhridgePrefix({
+        encoding: "utf8"
+    }));
+
+    // We need to restore EOL-character in stdout stream
+    cleanStdoutEndpoint = fork.b.pipe(new RestoreLineBreaks({
+        encoding: "utf8"
+    }));
+
+    return {
+        phridge: phridgeEndpoint,
+        cleanStdout: cleanStdoutEndpoint
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.phridge.lift" id="apidoc.element.phridge.lift">
+        function <span class="apidocSignatureSpan">phridge.</span>lift
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function lift(fn) {
+<span class="apidocCodeCommentSpan">    /**
+     * @this ctx
+     * @returns {Promise}
+     */
+</span>    return function () {
+        var args = slice.call(arguments);
+        var ctx = this;
+
+        return new Promise(function (resolve, reject) {
+            args.push(function (err, result) {
+                err ? reject(err) : resolve(result);
+            });
+            fn.apply(ctx, args);
+        });
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.phridge.serializeFn" id="apidoc.element.phridge.serializeFn">
+        function <span class="apidocSignatureSpan">phridge.</span>serializeFn
+        <span class="apidocSignatureSpan">(fn, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function serializeFn(fn, args) {
+    var fnIsSync = args.length === fn.length;
+    var src;
+
+    args = args.map(JSON.stringify);
+    args.unshift("context");
+
+    if (fnIsSync) {
+        src = "resolve((" + fn.toString() + ").call(" + args.join() + "));";
+    } else {
+        args.push("resolve", "reject");
+        src = "(" + fn.toString() + ").call(" + args.join() + ");";
+    }
+
+    // Currently sourceURLs aren't supported by PhantomJS but maybe in the future
+    return src + "//# sourceURL=phridge.js";
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.phridge.spawn" id="apidoc.element.phridge.spawn">
+        function <span class="apidocSignatureSpan">phridge.</span>spawn
+        <span class="apidocSignatureSpan">(phantomJsConfig)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function spawn(phantomJsConfig) {
+    var args;
+    var configPath;
+    var stdout;
+    var stderr;
+    var child;
+
+    phantomJsConfig = phantomJsConfig || {};
+
+    // Saving a reference of the current stdout and stderr because this is (probably) the expected behaviour.
+    // If we wouldn't save a reference, the config of a later state would be applied because we have to
+    // do asynchronous tasks before piping the streams.
+    stdout = config.stdout;
+    stderr = config.stderr;
+
+<span class="apidocCodeCommentSpan">    /**
+     * Step 1: Write the config
+     */
+</span>    return open(null)
+        .then(function writeConfig(info) {
+            configPath = info.path;
+
+            // Pass config items in CLI style (--some-config) separately to avoid Phantom's JSON config bugs
+            // @see https://github.com/peerigon/phridge/issues/31
+            args = Object.keys(phantomJsConfig)
+                .filter(function filterCliStyle(configKey) {
+                    return configKey.charAt(0) === "-";
+                })
+                .map(function returnConfigValue(configKey) {
+                    var configValue = phantomJsConfig[configKey];
+
+                    delete phantomJsConfig[configKey];
+
+                    return configKey + "=" + configValue;
+                });
+
+            return writeFile(info.path, JSON.stringify(phantomJsConfig))
+                .then(function () {
+                    return close(info.fd);
+                });
+        })
+    /**
+     * Step 2: Start PhantomJS with the config path and pipe stderr and stdout.
+     */
+        .then(function startPhantom() {
+            return new Promise(function (resolve, reject) {
+                function onStdout(chunk) {
+                    var message = chunk.toString("utf8");
+
+                    child.stdout.removeListener("data", onStdout);
+                    child.stderr.removeListener("data", onStderr);
+
+                    if (message.slice(0, initialMessage.length) === initialMessage) {
+                        resolve();
+                    } else {
+                        reject(new Error(message));
+                    }
+                }
+
+                // istanbul ignore next because there is no way to trigger stderr artificially in a test
+                function onStderr(chunk) {
+                    var message = chunk.toString("utf8");
+
+                    child.stdout.removeListener("data", onStdout);
+                    child.stderr.removeListener("data", onStderr);
+
+                    reject(new Error(message));
+                }
+
+                args.push(
+                  "--config=" + configPath,
+                  startScript,
+                  configPath
+                );
+
+                child = childProcess.spawn(phantomjs.path, args);
+
+                prepareChildProcess(child);
+
+                child.stdout.on("data", onStdout);
+                child.stderr.on("data", onStderr);
+
+                // Our destination streams should not be ended if the childProcesses exists
+                // thus { end: false }
+                // @see https://github.com/peerigon/phridge/issues/27
+                if (stdout) {
+                    child.cleanStdout.pipe(stdout, { end: false });
+                }
+                if (stderr) {
+                    child.stderr.pipe(stderr, { end: false });
+                }
+            });
+        })
+    /**
+     * Step 3: Create the actual Phantom-instance and return it.
+     */
+        .then(function () {
+            return new Phantom(child);
+        });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Examples
+------------------------------------------------------------------------
+
+### Spawn a new PhantomJS process
+
+```javascript
+phridge.<span class="apidocCodeKeywordSpan">spawn</span>({
+    proxyAuth: "john:1234",
+    loadImages: false,
+    // passing CLI-style options does also work
+    "--remote-debugger-port": 8888
+}).then(function (phantom) {
+    // phantom is now a reference to a specific PhantomJS process
+});
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.phridge.Page" id="apidoc.module.phridge.Page">module phridge.Page</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.phridge.Page.Page" id="apidoc.element.phridge.Page.Page">
+        function <span class="apidocSignatureSpan">phridge.</span>Page
+        <span class="apidocSignatureSpan">(phantom, id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Page(phantom, id) {
+    Page.prototype.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.phridge.Page.prototype" id="apidoc.module.phridge.Page.prototype">module phridge.Page.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.phridge.Page.prototype.dispose" id="apidoc.element.phridge.Page.prototype.dispose">
+        function <span class="apidocSignatureSpan">phridge.Page.prototype.</span>dispose
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dispose = function () {
+    var self = this;
+
+    return this.run(this._id, phantomMethods.disposePage)
+        .then(function () {
+            self.phantom = null;
+        });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### Cleaning up
+
+If you don't need a particular page anymore, just call:
+
+```javascript
+page.<span class="apidocCodeKeywordSpan">dispose</span>().then(function () {
+    console.log("page disposed");
+});
+```
+
+This will clean up all page references inside PhantomJS.
+
+If you don't need the whole process anymore call
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.phridge.Page.prototype.run" id="apidoc.element.phridge.Page.prototype.run">
+        function <span class="apidocSignatureSpan">phridge.Page.prototype.</span>run
+        <span class="apidocSignatureSpan">(args, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function (args, fn) {
+    args = slice.call(arguments);
+
+    fn = args.pop();
+
+    return this.phantom._send({
+        action: "run-on-page",
+        data: {
+            src: serializeFn(fn, args),
+            pageId: this._id
+        }
+    }, args.length === fn.length);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+```
+
+... you can write ...
+
+```javascript
+// node
+phantom.<span class="apidocCodeKeywordSpan">run</span>("h1", function (selector, resolve) {
+// this code runs inside PhantomJS
+
+phantom.addCookie("cookie_name", "cookie_value", "localhost");
+
+var page = webpage.create();
+page.customHeaders = {
+    Referer: "http://google.com"
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.phridge.Phantom" id="apidoc.module.phridge.Phantom">module phridge.Phantom</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.phridge.Phantom.Phantom" id="apidoc.element.phridge.Phantom.Phantom">
+        function <span class="apidocSignatureSpan">phridge.</span>Phantom
+        <span class="apidocSignatureSpan">(childProcess)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Phantom(childProcess) {
+    Phantom.prototype.constructor.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.phridge.Phantom.prototype" id="apidoc.module.phridge.Phantom.prototype">module phridge.Phantom.prototype</a></h1>
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.phridge.Phantom.prototype._afterExit" id="apidoc.element.phridge.Phantom.prototype._afterExit">
+        function <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>_afterExit
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_afterExit = function () {
+    var deferreds = this._pendingDeferreds;
+    var errorMessage = "Cannot communicate with PhantomJS process: ";
+    var error;
+
+    if (this._unexpectedError) {
+        errorMessage += this._unexpectedError.message;
+        error = new Error(errorMessage);
+        error.originalError = this._unexpectedError;
+    } else {
+        errorMessage += "Unknown reason";
+        error = new Error(errorMessage);
+    }
+
+    this.childProcess = null;
+
+    // When there are still any deferreds, we must reject them now
+    Object.keys(deferreds).forEach(function forEachPendingDeferred(id) {
+        deferreds[id].reject(error);
+        delete deferreds[id];
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+       error = new Error(errorMessage);
+   }
+   this._unexpectedError = error;
+
+   this._beforeExit();
+   // Chainsaw against PhantomJS zombies
+   this.childProcess.kill("SIGKILL");
+   this.<span class="apidocCodeKeywordSpan">_afterExit</span>();
+
+   this.emit("unexpectedExit", error);
+};
+
+/**
+* Will be used as "seal" for the run method to prevent run() calls after dispose.
+* Appends the original error when there was unexpected error.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.phridge.Phantom.prototype._beforeExit" id="apidoc.element.phridge.Phantom.prototype._beforeExit">
+        function <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>_beforeExit
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_beforeExit = function () {
+    var index;
+
+    this._isDisposed = true;
+
+    index = instances.indexOf(this);
+    index !== -1 &amp;&amp; instances.splice(index, 1);
+    clearTimeout(this._pingTimeoutId);
+
+    // Seal the run()-method so that future calls will automatically be rejected.
+    this.run = runGuard;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+       self.childProcess.on("exit", self._afterExit);
+       self.childProcess.on("exit", resolve);
+
+       self.removeAllListeners();
+
+       self.run(phantomMethods.exitPhantom).catch(reject);
+
+       self.<span class="apidocCodeKeywordSpan">_beforeExit</span>();
+   });
+};
+
+/**
+* Prepares the given message and writes it to childProcess.stdin.
+*
+* @param {Object} message
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.phridge.Phantom.prototype._onUnexpectedError" id="apidoc.element.phridge.Phantom.prototype._onUnexpectedError">
+        function <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>_onUnexpectedError
+        <span class="apidocSignatureSpan">(error)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_onUnexpectedError = function (error) {
+    var errorMessage;
+
+    if (this._isDisposed) {
+        return;
+    }
+
+    errorMessage = "PhantomJS exited unexpectedly";
+    if (error) {
+        error.message = errorMessage + ": " + error.message;
+    } else {
+        error = new Error(errorMessage);
+    }
+    this._unexpectedError = error;
+
+    this._beforeExit();
+    // Chainsaw against PhantomJS zombies
+    this.childProcess.kill("SIGKILL");
+    this._afterExit();
+
+    this.emit("unexpectedExit", error);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.phridge.Phantom.prototype._receive" id="apidoc.element.phridge.Phantom.prototype._receive">
+        function <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>_receive
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_receive = function (message) {
+    // That's our initial hi message which should be ignored by this method
+    if (message === "hi") {
+        return;
+    }
+
+    // Not wrapping with try-catch here because if this message is invalid
+    // we have no chance to map it back to a pending promise.
+    // Luckily this JSON can't be invalid because it has been JSON.stringified by PhantomJS.
+    message = JSON.parse(message);
+
+    // pong messages are special
+    if (message.status === "pong") {
+        this._pingTimeoutId = null;
+
+        // If we're still waiting for a message, we need to schedule a new ping
+        if (this._pending &gt; 0) {
+            this._schedulePing();
+        }
+        return;
+    }
+    this._resolveDeferred(message);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.phridge.Phantom.prototype._resolveDeferred" id="apidoc.element.phridge.Phantom.prototype._resolveDeferred">
+        function <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>_resolveDeferred
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_resolveDeferred = function (message) {
+    var deferred;
+
+    deferred = this._pendingDeferreds[message.id];
+
+    // istanbul ignore next because this is tested in a separated process and thus isn't recognized by istanbul
+    if (!deferred) {
+        // This happens when resolve() or reject() have been called twice
+        if (message.status === "success") {
+            throw new Error("Cannot call resolve() after the promise has already been resolved or rejected");
+        } else if (message.status === "fail") {
+            throw new Error("Cannot call reject() after the promise has already been resolved or rejected");
+        }
+    }
+
+    delete this._pendingDeferreds[message.id];
+    this._pending--;
+
+    if (message.status === "success") {
+        deferred.resolve(message.data);
+    } else {
+        deferred.reject(message.data);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+       // If we're still waiting for a message, we need to schedule a new ping
+       if (this._pending &gt; 0) {
+           this._schedulePing();
+       }
+       return;
+   }
+   this.<span class="apidocCodeKeywordSpan">_resolveDeferred</span>(message);
+};
+
+/**
+* Takes the required actions to respond on the given message.
+*
+* @param {Object} message
+* @private
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.phridge.Phantom.prototype._schedulePing" id="apidoc.element.phridge.Phantom.prototype._schedulePing">
+        function <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>_schedulePing
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_schedulePing = function () {
+    if (this._pingTimeoutId !== null) {
+        // There is already a ping scheduled. It's unnecessary to schedule another one.
+        return;
+    }
+    if (this._isDisposed) {
+        // No need to schedule a ping, this instance is about to be disposed.
+        // Catches rare edge cases where a pong message is received right after the instance has been disposed.
+        // @see https://github.com/peerigon/phridge/issues/41
+        return;
+    }
+    this._pingTimeoutId = setTimeout(this._write, pingInterval, { action: "ping" });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        message.id = nextRequestId++;
+
+        self._pendingDeferreds[message.id] = {
+            resolve: resolve,
+            reject: reject
+        };
+        if (!fnIsSync) {
+            self.<span class="apidocCodeKeywordSpan">_schedulePing</span>();
+        }
+        self._pending++;
+
+        self._write(message);
+    });
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.phridge.Phantom.prototype._send" id="apidoc.element.phridge.Phantom.prototype._send">
+        function <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>_send
+        <span class="apidocSignatureSpan">(message, fnIsSync)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_send = function (message, fnIsSync) {
+    var self = this;
+
+    return new Promise(function (resolve, reject) {
+        message.from = new Error().stack
+            .split(/\n/g)
+            .slice(1)
+            .join("\n");
+        message.id = nextRequestId++;
+
+        self._pendingDeferreds[message.id] = {
+            resolve: resolve,
+            reject: reject
+        };
+        if (!fnIsSync) {
+            self._schedulePing();
+        }
+        self._pending++;
+
+        self._write(message);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @returns {Promise}
+ */
+Page.prototype.run = function (args, fn) {
+    args = slice.call(arguments);
+
+    fn = args.pop();
+
+    return this.phantom.<span class="apidocCodeKeywordSpan">_send</span>({
+        action: "run-on-page",
+        data: {
+            src: serializeFn(fn, args),
+            pageId: this._id
+        }
+    }, args.length === fn.length);
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.phridge.Phantom.prototype._write" id="apidoc.element.phridge.Phantom.prototype._write">
+        function <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>_write
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_write = function (message) {
+    this.childProcess.stdin.write(JSON.stringify(message) + os.EOL, "utf8");
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+           reject: reject
+       };
+       if (!fnIsSync) {
+           self._schedulePing();
+       }
+       self._pending++;
+
+       self.<span class="apidocCodeKeywordSpan">_write</span>(message);
+   });
+};
+
+/**
+* Helper function that stringifies the given message-object, appends an end of line character
+* and writes it to childProcess.stdin.
+*
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.phridge.Phantom.prototype.constructor" id="apidoc.element.phridge.Phantom.prototype.constructor">
+        function <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(childProcess)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">constructor = function (childProcess) {
+    EventEmitter.call(this);
+
+    this._receive = this._receive.bind(this);
+    this._write = this._write.bind(this);
+    this._afterExit = this._afterExit.bind(this);
+    this._onUnexpectedError = this._onUnexpectedError.bind(this);
+
+    this.childProcess = childProcess;
+    this._pendingDeferreds = {};
+
+    instances.push(this);
+
+    // Listen for stdout messages dedicated to phridge
+    childProcess.phridge.on("data", this._receive);
+
+    // Add handlers for unexpected events
+    childProcess.on("exit", this._onUnexpectedError);
+    childProcess.on("error", this._onUnexpectedError);
+    childProcess.stdin.on("error", this._onUnexpectedError);
+    childProcess.stdout.on("error", this._onUnexpectedError);
+    childProcess.stderr.on("error", this._onUnexpectedError);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.phridge.Phantom.prototype.createPage" id="apidoc.element.phridge.Phantom.prototype.createPage">
+        function <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>createPage
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createPage = function () {
+    var self = this;
+
+    return new Page(self, pageId++);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+phridge uses PhantomJS' stdin and stdout for [inter-process communication](http://en.wikipedia.org/wiki/Inter-process_communication
+). It stringifies the given function, passes it to PhantomJS via stdin, executes it in the PhantomJS environment and passes back
+ the results via stdout. Thus you can write your PhantomJS scripts inside your node modules in a clean and synchronous way.
+
+Instead of ...
+
+```javascript
+phantom.addCookie("cookie_name", "cookie_value", "localhost", function () {
+phantom.<span class="apidocCodeKeywordSpan">createPage</span>(function (page) {
+    page.set("customHeaders.Referer", "http://google.com", function () {
+        page.set(
+            "settings.userAgent",
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5)",
+            function () {
+                page.open("http://localhost:9901/cookie", function (status) {
+                    page.evaluate(function (selector) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.phridge.Phantom.prototype.dispose" id="apidoc.element.phridge.Phantom.prototype.dispose">
+        function <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>dispose
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dispose = function () {
+    var self = this;
+
+    return new Promise(function dispose(resolve, reject) {
+        if (self._isDisposed) {
+            resolve();
+            return;
+        }
+
+        // Remove handler for unexpected exits and add regular exit handlers
+        self.childProcess.removeListener("exit", self._onUnexpectedError);
+        self.childProcess.on("exit", self._afterExit);
+        self.childProcess.on("exit", resolve);
+
+        self.removeAllListeners();
+
+        self.run(phantomMethods.exitPhantom).catch(reject);
+
+        self._beforeExit();
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+### Cleaning up
+
+If you don't need a particular page anymore, just call:
+
+```javascript
+page.<span class="apidocCodeKeywordSpan">dispose</span>().then(function () {
+    console.log("page disposed");
+});
+```
+
+This will clean up all page references inside PhantomJS.
+
+If you don't need the whole process anymore call
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.phridge.Phantom.prototype.openPage" id="apidoc.element.phridge.Phantom.prototype.openPage">
+        function <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>openPage
+        <span class="apidocSignatureSpan">(url)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">openPage = function (url) {
+    var page = this.createPage();
+
+    return page.run(url, phantomMethods.openPage)
+        .then(function () {
+            return page;
+        });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            return reject(new Error("Cannot load " + this.url));
+        }
+        resolve();
+    });
+});
+```
+
+And for the busy ones: You can just call `phantom.<span class="apidocCodeKeywordSpan">openPage</span>(url)` which is basically the
+ same as above:
+
+```javascript
+phantom.openPage("http://example.com").then(function (page) {
+    console.log("Example loaded");
+});
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.phridge.Phantom.prototype.run" id="apidoc.element.phridge.Phantom.prototype.run">
+        function <span class="apidocSignatureSpan">phridge.Phantom.prototype.</span>run
+        <span class="apidocSignatureSpan">(args, fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function (args, fn) {
+    var self = this;
+
+    args = arguments;
+
+    return new Promise(function (resolve, reject) {
+        args = slice.call(args);
+        fn = args.pop();
+
+        self._send(
+            {
+                action: "run",
+                data: {
+                    src: serializeFn(fn, args)
+                }
+            },
+            args.length === fn.length
+        ).then(resolve, reject);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+```
+
+... you can write ...
+
+```javascript
+// node
+phantom.<span class="apidocCodeKeywordSpan">run</span>("h1", function (selector, resolve) {
+// this code runs inside PhantomJS
+
+phantom.addCookie("cookie_name", "cookie_value", "localhost");
+
+var page = webpage.create();
+page.customHeaders = {
+    Referer: "http://google.com"
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.phridge.disposeAll" id="apidoc.module.phridge.disposeAll">module phridge.disposeAll</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.phridge.disposeAll.disposeAll" id="apidoc.element.phridge.disposeAll.disposeAll">
+        function <span class="apidocSignatureSpan">phridge.</span>disposeAll
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function disposeAll() {
+    var copy = instances.slice(0); // copy the array because phantom.dispose() will modify it
+
+    return Promise.all(copy.map(exit));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+```
+
+which will terminate the process cleanly by calling `phantom.exit(0)` internally. You don't need to dispose all pages manuallly
+ when you call `phantom.dispose()`.
+
+However, calling
+
+```javascript
+phridge.<span class="apidocCodeKeywordSpan">disposeAll</span>().then(function () {
+    console.log("All processes created by phridge.spawn() have been terminated");
+});
+```
+
+will terminate all processes.
+
+**I strongly recommend to call** `phridge.disposeAll()` **when the node process exits as this is the only way to ensure that all
+ child processes terminate as well.** Since `disposeAll()` is async it is not safe to call it on `process.on("exit")`.
+It is better to call it on `SIGINT`, `SIGTERM` and within your regular exit flow.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.phridge.forkStdout" id="apidoc.module.phridge.forkStdout">module phridge.forkStdout</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.phridge.forkStdout.forkStdout" id="apidoc.element.phridge.forkStdout.forkStdout">
+        function <span class="apidocSignatureSpan">phridge.</span>forkStdout
+        <span class="apidocSignatureSpan">(stdout)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function forkStdout(stdout) {
+    var fork;
+    var phridgeEndpoint;
+    var cleanStdoutEndpoint;
+
+    // Expecting a character stream because we're splitting messages by an EOL-character
+    stdout.setEncoding("utf8");
+
+    fork = new ForkStream({
+        classifier: function (chunk, done) {
+            chunk = chunk
+                .slice(0, messageToNode.length);
+            done(null, chunk === messageToNode);
+        }
+    });
+
+    stdout
+        .pipe(new Linerstream())
+        .pipe(fork);
+
+    // Removes the 'message to node: '-prefix from every chunk.
+    phridgeEndpoint = fork.a.pipe(new CropPhridgePrefix({
+        encoding: "utf8"
+    }));
+
+    // We need to restore EOL-character in stdout stream
+    cleanStdoutEndpoint = fork.b.pipe(new RestoreLineBreaks({
+        encoding: "utf8"
+    }));
+
+    return {
+        phridge: phridgeEndpoint,
+        cleanStdout: cleanStdoutEndpoint
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.phridge.lift" id="apidoc.module.phridge.lift">module phridge.lift</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.phridge.lift.lift" id="apidoc.element.phridge.lift.lift">
+        function <span class="apidocSignatureSpan">phridge.</span>lift
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function lift(fn) {
+<span class="apidocCodeCommentSpan">    /**
+     * @this ctx
+     * @returns {Promise}
+     */
+</span>    return function () {
+        var args = slice.call(arguments);
+        var ctx = this;
+
+        return new Promise(function (resolve, reject) {
+            args.push(function (err, result) {
+                err ? reject(err) : resolve(result);
+            });
+            fn.apply(ctx, args);
+        });
+    };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.phridge.serializeFn" id="apidoc.module.phridge.serializeFn">module phridge.serializeFn</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.phridge.serializeFn.serializeFn" id="apidoc.element.phridge.serializeFn.serializeFn">
+        function <span class="apidocSignatureSpan">phridge.</span>serializeFn
+        <span class="apidocSignatureSpan">(fn, args)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function serializeFn(fn, args) {
+    var fnIsSync = args.length === fn.length;
+    var src;
+
+    args = args.map(JSON.stringify);
+    args.unshift("context");
+
+    if (fnIsSync) {
+        src = "resolve((" + fn.toString() + ").call(" + args.join() + "));";
+    } else {
+        args.push("resolve", "reject");
+        src = "(" + fn.toString() + ").call(" + args.join() + ");";
+    }
+
+    // Currently sourceURLs aren't supported by PhantomJS but maybe in the future
+    return src + "//# sourceURL=phridge.js";
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.phridge.spawn" id="apidoc.module.phridge.spawn">module phridge.spawn</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.phridge.spawn.spawn" id="apidoc.element.phridge.spawn.spawn">
+        function <span class="apidocSignatureSpan">phridge.</span>spawn
+        <span class="apidocSignatureSpan">(phantomJsConfig)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function spawn(phantomJsConfig) {
+    var args;
+    var configPath;
+    var stdout;
+    var stderr;
+    var child;
+
+    phantomJsConfig = phantomJsConfig || {};
+
+    // Saving a reference of the current stdout and stderr because this is (probably) the expected behaviour.
+    // If we wouldn't save a reference, the config of a later state would be applied because we have to
+    // do asynchronous tasks before piping the streams.
+    stdout = config.stdout;
+    stderr = config.stderr;
+
+<span class="apidocCodeCommentSpan">    /**
+     * Step 1: Write the config
+     */
+</span>    return open(null)
+        .then(function writeConfig(info) {
+            configPath = info.path;
+
+            // Pass config items in CLI style (--some-config) separately to avoid Phantom's JSON config bugs
+            // @see https://github.com/peerigon/phridge/issues/31
+            args = Object.keys(phantomJsConfig)
+                .filter(function filterCliStyle(configKey) {
+                    return configKey.charAt(0) === "-";
+                })
+                .map(function returnConfigValue(configKey) {
+                    var configValue = phantomJsConfig[configKey];
+
+                    delete phantomJsConfig[configKey];
+
+                    return configKey + "=" + configValue;
+                });
+
+            return writeFile(info.path, JSON.stringify(phantomJsConfig))
+                .then(function () {
+                    return close(info.fd);
+                });
+        })
+    /**
+     * Step 2: Start PhantomJS with the config path and pipe stderr and stdout.
+     */
+        .then(function startPhantom() {
+            return new Promise(function (resolve, reject) {
+                function onStdout(chunk) {
+                    var message = chunk.toString("utf8");
+
+                    child.stdout.removeListener("data", onStdout);
+                    child.stderr.removeListener("data", onStderr);
+
+                    if (message.slice(0, initialMessage.length) === initialMessage) {
+                        resolve();
+                    } else {
+                        reject(new Error(message));
+                    }
+                }
+
+                // istanbul ignore next because there is no way to trigger stderr artificially in a test
+                function onStderr(chunk) {
+                    var message = chunk.toString("utf8");
+
+                    child.stdout.removeListener("data", onStdout);
+                    child.stderr.removeListener("data", onStderr);
+
+                    reject(new Error(message));
+                }
+
+                args.push(
+                  "--config=" + configPath,
+                  startScript,
+                  configPath
+                );
+
+                child = childProcess.spawn(phantomjs.path, args);
+
+                prepareChildProcess(child);
+
+                child.stdout.on("data", onStdout);
+                child.stderr.on("data", onStderr);
+
+                // Our destination streams should not be ended if the childProcesses exists
+                // thus { end: false }
+                // @see https://github.com/peerigon/phridge/issues/27
+                if (stdout) {
+                    child.cleanStdout.pipe(stdout, { end: false });
+                }
+                if (stderr) {
+                    child.stderr.pipe(stderr, { end: false });
+                }
+            });
+        })
+    /**
+     * Step 3: Create the actual Phantom-instance and return it.
+     */
+        .then(function () {
+            return new Phantom(child);
+        });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Examples
+------------------------------------------------------------------------
+
+### Spawn a new PhantomJS process
+
+```javascript
+phridge.<span class="apidocCodeKeywordSpan">spawn</span>({
+    proxyAuth: "john:1234",
+    loadImages: false,
+    // passing CLI-style options does also work
+    "--remote-debugger-port": 8888
+}).then(function (phantom) {
+    // phantom is now a reference to a specific PhantomJS process
+});
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
