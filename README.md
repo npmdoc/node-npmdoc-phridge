@@ -1,4 +1,7 @@
-# api documentation for  [phridge (v2.0.0)](https://github.com/peerigon/phridge#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-phridge.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-phridge) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-phridge.svg)](https://travis-ci.org/npmdoc/node-npmdoc-phridge)
+# npmdoc-phridge
+
+#### basic api documentation for  [phridge (v2.0.0)](https://github.com/peerigon/phridge#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-phridge.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-phridge) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-phridge.svg)](https://travis-ci.org/npmdoc/node-npmdoc-phridge)
+
 #### A bridge between node and phantomjs
 
 [![NPM](https://nodei.co/npm/phridge.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/phridge)
@@ -74,7 +77,8 @@
         "posttest": "eslint examples lib test",
         "test": "mocha -R spec"
     },
-    "version": "2.0.0"
+    "version": "2.0.0",
+    "bin": {}
 }
 ```
 
